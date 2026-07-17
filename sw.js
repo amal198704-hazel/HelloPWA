@@ -41,8 +41,4 @@ self.addEventListener("message", event => {
 
 });
 
-navigator.serviceWorker.addEventListener("controllerchange", () => {
 
-    window.location.reload();
-
-});
