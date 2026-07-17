@@ -626,7 +626,8 @@
     <span><i class="fas fa-database"></i> stored locally</span>
   </div>
 </div>
-
+<div id="updateBanner">
+  <button id="btnUpdate">
 <script>
   // ============================================================
   // MAIN APPLICATION SCRIPT
@@ -915,11 +916,11 @@
   // ============================================================
   // SERVICE WORKER REGISTRATION
   // ============================================================
-  if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("./sw.js")
-        .then(() => console.log("Service Worker Registered"))
-        .catch(console.error);
-}
+//   if ("serviceWorker" in navigator) {
+//     navigator.serviceWorker.register("./sw.js")
+//         .then(() => console.log("Service Worker Registered"))
+//         .catch(console.error);
+// }
 let newWorker;
 
 navigator.serviceWorker.register("./sw.js").then(reg => {
@@ -960,6 +961,12 @@ navigator.serviceWorker.register("./sw.js").then(reg => {
     };
 
 }
+
+  navigator.serviceWorker.addEventListener("controllerchange", () => {
+
+    window.location.reload();
+
+});
   
 </script>
 
